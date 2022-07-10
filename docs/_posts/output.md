@@ -1,0 +1,170 @@
+---
+layout: post
+title:  "Test only"
+date:   2022-07-10
+categories: Tests
+---
+```python
+from fastai.vision.all import *
+path = untar_data(URLs.PETS)/'images'
+```
+
+
+```python
+def is_cat(x): return x[0].isupper()
+dls = ImageDataLoaders.from_name_func(
+    path, get_image_files(path), valid_pct=0.2, seed = 42,
+    label_func=is_cat, item_tfms=Resize(224)
+)
+
+learn = vision_learner(dls, resnet34, metrics=error_rate)
+learn.fine_tune(1)
+```
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>error_rate</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0.184861</td>
+      <td>0.038785</td>
+      <td>0.012179</td>
+      <td>00:40</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: left;">
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>valid_loss</th>
+      <th>error_rate</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0.054127</td>
+      <td>0.011833</td>
+      <td>0.004736</td>
+      <td>00:49</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+```python
+import ipywidgets as widgets
+
+# Broken because of nodejs update
+uploader = widgets.FileUpload()
+uploader
+```
+
+
+    FileUpload(value={}, description='Upload')
+
+
+
+```python
+uploader = SimpleNamespace(data = ['test8.jpg'])
+```
+
+
+```python
+img = PILImage.create(uploader.data[0])
+img
+```
+
+
+
+
+
+![png](output_files/output_4_0.png)
+
+
+
+
+
+```python
+is_cat, _, probs = learn.predict(img)
+print(f"Is this a cat?: {is_cat}.")
+print(f"Probability it's a cat: {probs[1].item():.6f}")
+```
+
+
+
+
+
+    Is this a cat?: True.
+    Probability it's a cat: 0.993564
+
+
+
+    The Kernel crashed while executing code in the the current cell or a previous cell. Please review the code in the cell(s) to identify a possible cause of the failure. Click <a href='https://aka.ms/vscodeJupyterKernelCrash'>here</a> for more info. View Jupyter <a href='command:jupyter.viewOutput'>log</a> for further details.
+
+
+
+```python
+for i in range(4):
+    print(i+4)
+    uploader = SimpleNamespace(data = [f'test{i+3}.jpg'])
+    img = PILImage.create(uploader.data[0])
+    img
+    is_cat, _, probs = learn.predict(img)
+    print(f"Is this a cat?: {is_cat}.")
+    print(f"Probability it's a cat: {probs[1].item():.6f}")
+```
+
+    4
+
+
+
+
+
+
+    Is this a cat?: False.
+    Probability it's a cat: 0.305305
+    5
+
+
+
+
+
+
+    Is this a cat?: True.
+    Probability it's a cat: 0.754922
+    6
+
+
+
+
+
+
+    Is this a cat?: False.
+    Probability it's a cat: 0.000332
+    7
+
+
+
+
+
+
+    Is this a cat?: True.
+    Probability it's a cat: 0.999007
+
