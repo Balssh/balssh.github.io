@@ -1,41 +1,35 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import { fade } from "astro:transitions";
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
-  <p transition:animate={fade({ duration: "2s" })}>
-    Written by {frontmatter.author}
-  </p>
-  <div class="tags">
-    {
-      frontmatter.tags.map((tag) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </p>
-      ))
-    }
+  <div class="flex flex-col gap-2">
+    <h1
+      class="py-1 text-2xl text-light-bgColor bg-light-metaColor text-balance text-center"
+    >
+      {frontmatter.title}
+    </h1>
+    <div>
+      <p class="text-light-metaColor text-base">
+        Published on: {frontmatter.pubDate.toString().slice(0, 10)}
+      </p>
+      <p class="text-light-metaColor text-base">
+        Written by {frontmatter.author}
+      </p>
+    </div>
+    <div class="flex justify-center">
+      {
+        frontmatter.tags.map((tag) => (
+          <a
+            href={`/tags/${tag}`}
+            class="p-1 rounded-md text-light-linkColor focus:bg-light-linkColor focus:text-light-bgColor hover:bg-light-linkColor hover:text-light-bgColor text-base"
+          >
+            {tag}
+          </a>
+        ))
+      }
+    </div>
+    <slot />
   </div>
-  <slot />
 </BaseLayout>
-<style>
-  a {
-    color: #00539f;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    margin: 0.25em;
-    border: solid 1px #a1a1a1;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
-    font-size: 1.15em;
-    background-color: #f8fcfd;
-  }
-</style>
