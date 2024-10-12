@@ -1,0 +1,3 @@
+[submodule "blog/themes/anemone"]
+	path = blog/themes/anemone
+	url = https://github.com/Speyll/anemone.git
