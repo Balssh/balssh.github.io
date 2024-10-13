@@ -1,4 +1,4 @@
-base_url = "https://example.com"
+base_url = "https://balssh.github.io"
 theme = "anemone"
 description = ""
 compile_sass = false
