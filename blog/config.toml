@@ -31,7 +31,7 @@ internal_level = "warn"
 author = "Balssh"
 display_author = true
 
-favicon = "favicon.ico"
+favicon = "otter_favicon.ico"
 image = ""
 
 default_theme = "dark"
