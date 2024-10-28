@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://balssh.github.io/</loc>
+    </url>
+    <url>
+        <loc>https://balssh.github.io/about/</loc>
+    </url>
+    <url>
+        <loc>https://balssh.github.io/blog/</loc>
+    </url>
+    <url>
+        <loc>https://balssh.github.io/extra/</loc>
+    </url>
+    <url>
+        <loc>https://balssh.github.io/extra/series/</loc>
+    </url>
+    <url>
+        <loc>https://balssh.github.io/extra/tools/</loc>
+    </url>
+    <url>
+        <loc>https://balssh.github.io/journal/</loc>
+        <lastmod>2019-10-05</lastmod>
+    </url>
+    <url>
+        <loc>https://balssh.github.io/tags/</loc>
+    </url>
+</urlset>
