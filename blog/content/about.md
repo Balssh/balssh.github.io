@@ -1,11 +1,10 @@
 +++
 title = "About"
 +++
-Hi and welcome everyone who stumpled upon this site, my corner of the internet. I'll *hopefully*[^1] write about various
-things that piqued my interest, whether they are related to computer science, books, TV series and anything in between
 
 So here are a few things about me:
-- as of `27-10-2024` I'm a (Junior) DevOps at Intel, this being my first[^2] corporate job. I intend to write at some
+
+- as of `27-10-2024` I'm a (Junior) DevOps at Intel, this being my first[^1] corporate job. I intend to write at some
 point about how I got into DevOps before I even knew what it was and what are my thoughts about this branch of software
 developement.
 - got my bachelor degree in System Engineering and altought I enjoyed the campus life, especially before the 2020
@@ -26,6 +25,4 @@ football.
 
 ---
 
-[^1]: Over the years, I've tried many times to get into maintaining a site/blog but I would ultimately
-give up after a handful of articles. I want this time to be different.
-[^2]: If you'll throw an eye on my resume, you'll see I also have about 3 months of an internship at Continental, but it was a whole another area and I didn't do much there anyway
+[^1]: If you'll throw an eye on my [resume](/my-cv.pdf), you'll see I also have about 3 months of an internship at Continental, but it was a whole another area and I didn't do much there anyway
